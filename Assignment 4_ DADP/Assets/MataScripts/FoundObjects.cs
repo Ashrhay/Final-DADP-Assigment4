@@ -4,105 +4,51 @@ using UnityEngine.UI;
 public class FoundObjects : MonoBehaviour
 {
     public Text FeedbackText;
+    public Text CollectedPartsText; // Text to display "Plane Parts Collected: X/10"
 
-    private string currentFeedback = "No Plane Parts Were Found Yet";
-
-    private bool planePart1Found = false;
-    private bool planePart2Found = false;
-    private bool planePart3Found = false;
-    private bool planePart4Found = false;
-    private bool planePart5Found = false;
-
-    public GameObject PlanePart1;
-    public GameObject PlanePart2;
-    public GameObject PlanePart3;
-    public GameObject PlanePart4;
-    public GameObject PlanePart5;
-    public GameObject PlanePart6;
-    public GameObject PlanePart7;
-    public GameObject PlanePart8;
-    public GameObject PlanePart9;
-    public GameObject PlanePart10;
+    private int collectedPartsCount = 0; // Track the number of collected plane parts
+    private bool[] planePartsFound; // An array to track which plane parts are found
 
     void Start()
     {
-        Debug.Log("Player character found: " + gameObject.name);
-        Collider collider = GetComponent<Collider>();
-        Debug.Log("Collider tag: " + collider.tag);
+        // Initialize the array with 10 elements, all set to false (not found)
+        planePartsFound = new bool[10];
+        for (int i = 0; i < planePartsFound.Length; i++)
+        {
+            planePartsFound[i] = false;
+        }
+
+        UpdateCollectedPartsText(); // Initialize the CollectedPartsText
     }
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision detected with: " + other.gameObject.name);
 
-        if (other.CompareTag("PlanePart1") && !planePart1Found)
+        // Check if the collided object has a tag corresponding to a plane part
+        for (int i = 0; i < planePartsFound.Length; i++)
         {
-            UpdateFeedback("Plane Part 1");
-            Destroy(PlanePart1);
-            planePart1Found = true;
-        }
-        else if (other.CompareTag("PlanePart2") && !planePart2Found)
-        {
-            UpdateFeedback("Plane Part 2");
-            Destroy(PlanePart2);
-            planePart2Found = true;
-        }
-        else if (other.CompareTag("PlanePart3") && !planePart3Found)
-        {
-            UpdateFeedback("Plane Part 3");
-            Destroy(PlanePart3);
-            planePart3Found = true;
-        }
-        else if (other.CompareTag("PlanePart4") && !planePart4Found)
-        {
-            UpdateFeedback("Plane Part 4");
-            Destroy(PlanePart4);
-            planePart4Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 5");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 6");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 7");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 8");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 9");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
-        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
-        {
-            UpdateFeedback("Plane Part 10");
-            Destroy(PlanePart5);
-            planePart5Found = true;
-        }
+            string tagToCompare = "PlanePart" + (i + 1);
 
-
+            if (other.CompareTag(tagToCompare) && !planePartsFound[i])
+            {
+                UpdateFeedback("Plane Part " + (i + 1));
+                planePartsFound[i] = true;
+                collectedPartsCount++;
+                UpdateCollectedPartsText(); // Update the collected parts count text
+                Destroy(other.gameObject); // Destroy the collided object
+            }
+        }
     }
 
     void UpdateFeedback(string newFeedback)
     {
-        currentFeedback = newFeedback;
-        FeedbackText.text = "<color=#HEXCOLOR>You found:</color> <color=red>" + currentFeedback + "</color>";
+        string currentFeedback = "<color=#HEXCOLOR>You found:</color> <color=red>" + newFeedback + "</color>";
+        FeedbackText.text = currentFeedback;
+    }
 
+    void UpdateCollectedPartsText()
+    {
+        CollectedPartsText.text = "PLANE PARTS COLLECTED: " + collectedPartsCount + "/10";
     }
 }
