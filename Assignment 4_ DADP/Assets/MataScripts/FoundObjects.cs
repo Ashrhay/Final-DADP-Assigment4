@@ -18,6 +18,11 @@ public class FoundObjects : MonoBehaviour
     public GameObject PlanePart3;
     public GameObject PlanePart4;
     public GameObject PlanePart5;
+    public GameObject PlanePart6;
+    public GameObject PlanePart7;
+    public GameObject PlanePart8;
+    public GameObject PlanePart9;
+    public GameObject PlanePart10;
 
     void Start()
     {
@@ -57,6 +62,36 @@ public class FoundObjects : MonoBehaviour
         else if (other.CompareTag("PlayerPart5") && !planePart5Found)
         {
             UpdateFeedback("Plane Part 5");
+            Destroy(PlanePart5);
+            planePart5Found = true;
+        }
+        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
+        {
+            UpdateFeedback("Plane Part 6");
+            Destroy(PlanePart5);
+            planePart5Found = true;
+        }
+        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
+        {
+            UpdateFeedback("Plane Part 7");
+            Destroy(PlanePart5);
+            planePart5Found = true;
+        }
+        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
+        {
+            UpdateFeedback("Plane Part 8");
+            Destroy(PlanePart5);
+            planePart5Found = true;
+        }
+        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
+        {
+            UpdateFeedback("Plane Part 9");
+            Destroy(PlanePart5);
+            planePart5Found = true;
+        }
+        else if (other.CompareTag("PlayerPart5") && !planePart5Found)
+        {
+            UpdateFeedback("Plane Part 10");
             Destroy(PlanePart5);
             planePart5Found = true;
         }
