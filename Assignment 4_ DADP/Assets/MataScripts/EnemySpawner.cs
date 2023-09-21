@@ -10,9 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRadius = 5f;
     public float spawnInterval = 7f;
 
-    public Transform spawner; // Assign the 'Spawner' GameObject in the Unity Inspector
-
-    public float minDistanceBetweenEnemies = 2f; // Minimum distance between spawned enemies
+    private int totalEnemiesSpawned = 0; // Track the total number of enemies spawned.
 
     private void Start()
     {
@@ -23,32 +21,16 @@ public class EnemySpawner : MonoBehaviour
     {
         int numberOfEnemiesToSpawn = Random.Range(minNumberOfEnemies, maxNumberOfEnemies + 1);
 
-        for (int i = 0; i < numberOfEnemiesToSpawn; i++)
+        for (int i = 0; i < numberOfEnemiesToSpawn && totalEnemiesSpawned < 20; i++)
         {
             Vector3 randomSpawnPos = Random.insideUnitSphere * spawnRadius;
             RaycastHit hit;
 
-            if (Physics.Raycast(spawner.position + randomSpawnPos, Vector3.down, out hit))
+            if (Physics.Raycast(transform.position + randomSpawnPos, Vector3.down, out hit))
             {
                 Vector3 spawnPosition = hit.point; // Use the point where the raycast hit the ground
-
-                // Check if there's already an enemy within the minimum distance
-                Collider[] colliders = Physics.OverlapSphere(spawnPosition, minDistanceBetweenEnemies);
-                bool isOverlapping = false;
-
-                foreach (var collider in colliders)
-                {
-                    if (collider.CompareTag("Enemy"))
-                    {
-                        isOverlapping = true;
-                        break;
-                    }
-                }
-
-                if (!isOverlapping)
-                {
-                    Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
-                }
+                Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+                totalEnemiesSpawned++; // Increment the total count.
             }
         }
     }
