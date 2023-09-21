@@ -34,7 +34,10 @@ public class LocationManager : MonoBehaviour
         {
             UpdateLocation("BEACH");
         }
-
+        else if (other.CompareTag("Helicopter Pad"))
+        {
+            UpdateLocation("HELICOPTER PAD");
+        }
     }
 
     void UpdateLocation(string newLocation)

@@ -7,6 +7,22 @@ TagManager:
   - EnemyBullet
   - CinemachineTarget
   - 'Ground '
+  - Tri
+  - Obj
+  - Beach
+  - Helicopter Pad
+  - Mountain
+  - Jungle
+  - PlanePart1
+  - PlanePart2
+  - PlanePart3
+  - PlanePart4
+  - PlanePart5
+  - PlanePart6
+  - PlanePart7
+  - PlanePart8
+  - PlanePart9
+  - PlanePart10
   layers:
   - Default
   - TransparentFX
