@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 239262489}
   - component: {fileID: 239262488}
   - component: {fileID: 239262487}
+  - component: {fileID: 239262490}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -354,7 +355,7 @@ MonoBehaviour:
   orientation: {fileID: 651833863}
   moveSpeed: 4500
   maxSpeed: 20
-  grounded: 0
+  grounded: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -362,7 +363,7 @@ MonoBehaviour:
   maxSlopeAngle: 35
   slideForce: 400
   slideCounterMovement: 0.2
-  jumpForce: 550
+  jumpForce: 50
 --- !u!54 &239262488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -397,6 +398,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &239262490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239262485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43681f2975dcf854082c2aac2e0267e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumHeight: 5
+  grounded: 0
 --- !u!1 &363464076
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,9 +424,9 @@ GameObject:
   - component: {fileID: 363464079}
   - component: {fileID: 363464078}
   - component: {fileID: 363464077}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: 'Ground '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -1113,7 +1128,7 @@ GameObject:
   m_Name: 'Player object '
   m_TagString: Player
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 2
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1290211821
@@ -1820,7 +1835,7 @@ GameObject:
   - component: {fileID: 2023706427}
   m_Layer: 6
   m_Name: 'Platform '
-  m_TagString: Untagged
+  m_TagString: 'Ground '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
