@@ -22,10 +22,10 @@ public class LocationManager : MonoBehaviour
         {
             UpdateLocation("MOUNTAIN");
         }
-        else if (other.CompareTag("Castle"))
+        /*else if (other.CompareTag("Castle"))
         {
             UpdateLocation("CASTLE");
-        }
+        } */
         else if (other.CompareTag("Jungle"))
         {
             UpdateLocation("JUNGLE");
