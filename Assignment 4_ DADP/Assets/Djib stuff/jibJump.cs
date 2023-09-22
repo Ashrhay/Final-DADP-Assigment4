@@ -6,8 +6,8 @@ public class jibJump : MonoBehaviour
 {
     private Rigidbody rb;
     public float jumpHeight = 10;
-    private bool grounded;
-    private bool canDoubleJump = true;
+    public bool grounded;
+    public bool canDoubleJump = true;
     public float doubleJumpCooldown = 1.0f; // Adjust this cooldown time as needed
     private float lastJumpTime;
 

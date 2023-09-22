@@ -2465,6 +2465,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1119583537891690375, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: locationText
+      value: 
+      objectReference: {fileID: 21835202}
+    - target: {fileID: 1679675316748714339, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: grounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679675316748714339, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: jumpHeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679675316748714339, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: doubleJumpCooldown
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2042858215186632984, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2513,10 +2529,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Main Player '
       objectReference: {fileID: 0}
+    - target: {fileID: 2042858215186632986, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042858216459317695, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8543761562078717013, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 5645148351785465487, guid: aea2835b9b7ca104385e18fd9ca890d7, type: 3}
+    - target: {fileID: 9150934458344991085, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: FeedbackText
+      value: 
+      objectReference: {fileID: 1559619341}
+    - target: {fileID: 9150934458344991085, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
+      propertyPath: CollectedPartsText
+      value: 
+      objectReference: {fileID: 1073726899}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1b1f2cdc2d705419d3c2a2db32cc23, type: 3}
 --- !u!1 &234097330
@@ -17122,8 +17154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.00000047683716, y: 0.00000047683716}
+  m_SizeDelta: {x: 41.980804, y: 46.3323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502343048
 MonoBehaviour:
@@ -23867,7 +23899,7 @@ GameObject:
   - component: {fileID: 1999867688}
   m_Layer: 0
   m_Name: PlanePart6
-  m_TagString: PlanePart5
+  m_TagString: PlanePart6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24745,6 +24777,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bc2e2d59017174046bc52c4bd72083d6, type: 2}
+    - target: {fileID: 8345070700331616361, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
+      propertyPath: m_TagString
+      value: floor
+      objectReference: {fileID: 0}
     - target: {fileID: 9065339783988196015, guid: 09aade0ecefd01e4b8f7661acf64f5c2, type: 3}
       propertyPath: m_IsActive
       value: 1

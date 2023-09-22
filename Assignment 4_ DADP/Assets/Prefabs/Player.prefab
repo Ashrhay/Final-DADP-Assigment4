@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 10
+  grounded: 0
+  canDoubleJump: 1
   doubleJumpCooldown: 1
 --- !u!1 &2042858215277227069
 GameObject:
@@ -5130,6 +5132,8 @@ GameObject:
   - component: {fileID: 2042858216459317681}
   - component: {fileID: 2042858216459317682}
   - component: {fileID: 2042858216459317695}
+  - component: {fileID: 1119583537891690375}
+  - component: {fileID: 9150934458344991085}
   m_Layer: 0
   m_Name: playerObj
   m_TagString: Untagged
@@ -5216,6 +5220,33 @@ CapsuleCollider:
   m_Height: 2.05
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1119583537891690375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042858216459317685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22ab618166bb6646b63e6f2e499e95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationText: {fileID: 0}
+--- !u!114 &9150934458344991085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042858216459317685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9488bd700580e4646b310d9400622088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FeedbackText: {fileID: 0}
+  CollectedPartsText: {fileID: 0}
 --- !u!1 &2042858216734075913
 GameObject:
   m_ObjectHideFlags: 0
