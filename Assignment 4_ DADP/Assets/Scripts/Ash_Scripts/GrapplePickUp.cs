@@ -29,7 +29,7 @@ public class GrapplePickUp : MonoBehaviour
         if (grappleController != null)
         {
             // Set the grapple activation flag to true
-            grappleController.SetGrappleActivated(true);
+            //grappleController.SetGrappleActivated(true);
             Debug.Log("Grapple activated!");
         }
     }

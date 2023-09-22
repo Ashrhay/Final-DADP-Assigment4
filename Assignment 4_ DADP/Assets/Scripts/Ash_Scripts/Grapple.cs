@@ -7,10 +7,9 @@ public class Grapple : MonoBehaviour
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
-    public Transform gunTip, playercam, player;
+    public Transform gunTip, playerCamera, player;
     private float maxDistance = 100f;
     private SpringJoint joint;
-    private bool grappleActivated = false;
 
     void Awake()
     {
@@ -19,11 +18,11 @@ public class Grapple : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G) && grappleActivated)
+        if (Input.GetKeyDown(KeyCode.G))
         {
             StartGrapple();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetKeyUp(KeyCode.G))
         {
             StopGrapple();
         }
@@ -38,10 +37,10 @@ public class Grapple : MonoBehaviour
     /// <summary>
     /// Call whenever we want to start a grapple
     /// </summary>
-    public void StartGrapple()
+    void StartGrapple()
     {
         RaycastHit hit;
-        if (Physics.Raycast(playercam.position, playercam.forward, out hit, maxDistance, whatIsGrappleable))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, maxDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
@@ -63,6 +62,7 @@ public class Grapple : MonoBehaviour
             currentGrapplePosition = gunTip.position;
         }
     }
+
 
     /// <summary>
     /// Call whenever we want to stop a grapple
@@ -94,10 +94,5 @@ public class Grapple : MonoBehaviour
     public Vector3 GetGrapplePoint()
     {
         return grapplePoint;
-    }
-
-    public void SetGrappleActivated(bool activated)
-    {
-        grappleActivated = activated;
     }
 }
