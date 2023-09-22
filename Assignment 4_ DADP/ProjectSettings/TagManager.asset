@@ -23,6 +23,9 @@ TagManager:
   - PlanePart8
   - PlanePart9
   - PlanePart10
+  - bullet
+  - Enemy
+  - floor
   layers:
   - Default
   - TransparentFX
