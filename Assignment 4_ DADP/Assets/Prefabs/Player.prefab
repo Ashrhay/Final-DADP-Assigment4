@@ -41,7 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2042858215186632984}
   - component: {fileID: 2042858215186632985}
-  - component: {fileID: 2042858215186632999}
+  - component: {fileID: 4252671999575364815}
+  - component: {fileID: 1679675316748714339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,7 +85,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &2042858215186632999
+--- !u!114 &4252671999575364815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,20 +94,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042858215186632986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5307604ef881ca043b063220461a705b, type: 3}
+  m_Script: {fileID: 11500000, guid: a1daf84635e2a2447b09beaa7c089dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 2042858215277227068}
-  walkSpeed: 5
-  sprintSpeed: 10
-  jumpForce: 7
-  doubleJumpForce: 5
-  groundCheckDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
+  walkSpeed: 6
+  sprintSpeed: 12
   sprintKey: 304
-  jumpKey: 32
+--- !u!114 &1679675316748714339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042858215186632986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880b332da11063a4db75bcdb5361fabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 10
+  doubleJumpCooldown: 1
 --- !u!1 &2042858215277227069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,7 +5028,7 @@ GameObject:
   - component: {fileID: 2042858216106206899}
   - component: {fileID: 2042858216106206900}
   - component: {fileID: 2042858216106206901}
-  - component: {fileID: 2042858216106206898}
+  - component: {fileID: 9107464981532859864}
   m_Layer: 0
   m_Name: player camera
   m_TagString: MainCamera
@@ -5095,7 +5103,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042858216106206902}
   m_Enabled: 1
---- !u!114 &2042858216106206898
+--- !u!114 &9107464981532859864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5104,7 +5112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042858216106206902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d360cc87b0f0c394aba29735349f45f5, type: 3}
+  m_Script: {fileID: 11500000, guid: b919757d04a334b4dbddfe95ac8a616a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sensX: 400
@@ -5297,7 +5305,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0.0000000033155345, z: 5.77e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5369,6 +5377,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7694463076190625413, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
+      propertyPath: fpscam
+      value: 
+      objectReference: {fileID: 2042858216106206900}
+    - target: {fileID: 7694463076190625413, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
+      propertyPath: muzzelFlash
+      value: 
+      objectReference: {fileID: 2042858215954515299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
 --- !u!4 &2041891913812370392 stripped
@@ -5376,34 +5392,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4487492164278536, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
   m_PrefabInstance: {fileID: 2042858215156562640}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2043665845336058612 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1477722391941156, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
-  m_PrefabInstance: {fileID: 2042858215156562640}
-  m_PrefabAsset: {fileID: 0}
---- !u!81 &2042858215661205774
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043665845336058612}
-  m_Enabled: 1
---- !u!114 &2042858215661205761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043665845336058612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c2b60916b538f488555e5875abb0e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  range: 100
-  shootSound: {fileID: 0}
-  muzzelFlash: {fileID: 2042858215954515299}
-  fpscam: {fileID: 2042858216106206900}
-  bulletPrefab: {fileID: 0}

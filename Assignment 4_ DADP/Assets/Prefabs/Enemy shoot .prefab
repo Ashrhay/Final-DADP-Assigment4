@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1696908660371386022}
-  bullet: {fileID: 0}
+  bullet: {fileID: 1396777567278191440, guid: 26fcec6d512d1dc40b5cd61128fc855f, type: 3}
   shootPoint: {fileID: 1696908661964128826}
   shootSpeed: 10
   timeToShoot: 1.3
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 1696908661053551644}
   - component: {fileID: 1696908661053551617}
   - component: {fileID: 1696908661053551618}
+  - component: {fileID: 3184148875302072026}
   m_Layer: 0
   m_Name: 'Shooting enemy '
   m_TagString: Untagged
@@ -330,6 +331,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookradius: 10
+--- !u!114 &3184148875302072026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696908661053551643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1500c727417d958488f2ed124bdb9706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EHealth: 0
+  EMaxHealth: 3
+  playerDamage: 1
 --- !u!1 &1696908661964128825
 GameObject:
   m_ObjectHideFlags: 0

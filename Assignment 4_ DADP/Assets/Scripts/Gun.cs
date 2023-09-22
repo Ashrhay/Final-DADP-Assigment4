@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour
     public int damage = 1;
     public float range = 100f;
 
-    public AudioSource shootSound;
+    
     public ParticleSystem muzzelFlash;
     public Camera fpscam;
     public GameObject bulletPrefab;
